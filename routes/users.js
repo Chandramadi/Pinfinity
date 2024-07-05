@@ -24,10 +24,6 @@ const userSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Post",
   }],
-  boards:{
-    type:Array,
-    default:[],
-  },
 })
 
 userSchema.plugin(plm);//auth code
