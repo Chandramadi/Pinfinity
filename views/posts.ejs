@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="/stylesheets/posts.css">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo"
+            class="img1" />
+        <a href="#" class="nav-link">Pinterest</a>
+        <a href="/profile" class="nav-link nav-link-differ">Profile</a>
+        <a href="/feed" class="nav-link nav-link-differ">Feed</a>
+        <a href="/logout" class="btn-custom">Log Out</a>
+    </nav>
+
+    <div class="cards">
+        <% if (user.posts && user.posts.length> 0) { %>
+            <% user.posts.forEach(function(post){ %>
+                <div class="card">
+                    <img class="card-img" src="/images/uploads/<%= post.image %>" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= post.caption %></h5>
+                    </div>
+                </div>
+           <% }) %>
+        <% } else { %>
+            <p class="noPost">No posts to show</p>
+        <% } %>
+    </div>
+
+</body>
+</html>
