@@ -4,20 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" href="/stylesheets/index.css">
+    <title>Feed</title>
+    <link rel="stylesheet" href="/stylesheets/feed.css">
 </head>
 
 <body>
+
     <nav class="navbar">
-        <div class="nav-links">
-            <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="img1" />
-            <a href="#" class="nav-link">Pinterest</a>
-        </div>
-        <div class="btn-container">
-            <a href="/register" class="btn-custom register-button">Register</a>
-            <a href="/login" class="btn-custom">Log In</a>
-        </div>
+        <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo"
+            class="img1" />
+        <a href="#" class="nav-link">Pinterest</a>
+        <a href="/profile" class="nav-link nav-link-differ">Profile</a>
+        <a href="/profile/posts" class="nav-link nav-link-differ">Posts</a>
+        <a href="/logout" class="btn-custom">Log Out</a>
     </nav>
 
     <div class="cards">
@@ -26,7 +25,7 @@
                 <img class="card-img" src="/images/uploads/<%=post.image %>" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><%=post.caption%></h5>
-                    <p class="card-title">@<%=post.user.username%></p>
+                    <p class="card-title">@<%=post.user.username%></a>
                     <% 
                         const today = new Date(post.createdAt);
                         const yyyy = today.getFullYear();

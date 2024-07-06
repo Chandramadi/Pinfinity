@@ -12,12 +12,20 @@ const upload = require('./multer');//importing multer.js file
 const localStrategy = require("passport-local").Strategy;//auth code 
 passport.use(new localStrategy(UserModel.authenticate()));//login via email//auth code
 
-router.get("/",(req,res)=>{//This page contains register form
-  res.render("index");
+router.get("/register",(req,res)=>{//This page contains register form
+  res.render("register");
 })
 
-router.get("/feed",(req,res)=>{
-  res.render("feeds");
+router.get("/",async(req,res)=>{
+  const posts = await PostModel.find()
+  .populate("user");
+  res.render("index",{ posts });
+})
+
+router.get("/feed",isLoggedIn,async(req,res)=>{
+  const posts = await PostModel.find()
+  .populate("user");
+  res.render("feed",{ posts });
 })
 
 router.get("/profile/posts",isLoggedIn,async (req,res)=>{
@@ -94,7 +102,7 @@ router.post("/login", passport.authenticate("local", {//auth code
 router.get('/logout', function(req, res, next){//auth code
   req.logout(function(err) {
     if (err) { return next(err); }
-    res.redirect('/login');
+    res.redirect('/');
   });
 });//auth code
 

@@ -23,7 +23,27 @@
                 <div class="card">
                     <img class="card-img" src="/images/uploads/<%= post.image %>" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title"><%= post.caption %></h5>
+                        <% if(post.caption.length>0) {%>
+                            <h5 class="card-title">
+                                <%= post.caption %></h5>
+                        <% }else{ %>
+                            <h5 class="card-title">
+                                No Caption</h5>
+                        <% } %> 
+
+                        <% 
+                            const today = new Date(post.createdAt);
+                            const yyyy = today.getFullYear();
+                            let mm = today.getMonth() + 1;   <!-- Months start at 0!  -->
+                            let dd = today.getDate();
+                                
+                            if (dd < 10) dd = '0' + dd;
+                            if (mm < 10) mm = '0' + mm;
+                                
+                            const formattedToday = dd + '/' + mm + '/' + yyyy;
+                        %>
+                        <h5 class="card-date">
+                            <%= formattedToday%></h5>
                     </div>
                 </div>
            <% }) %>
