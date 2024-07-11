@@ -198,3 +198,28 @@ body {
     text-align: left;
     font-size: 0.8rem;
 }
+
+/* ... Footer ... */
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer p {
+    margin: 5px 0;
+}
+
+.footer a {
+    color: #ff7985;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}

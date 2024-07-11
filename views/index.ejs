@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
+    <link rel="shortcut icon" href="/images/Pinfinity.ico" type="image/x-icon">
     <link rel="stylesheet" href="/stylesheets/index.css">
 </head>
 
 <body>
     <nav class="navbar">
         <div class="nav-links">
-            <img src="https://i.pinimg.com/originals/d3/d1/75/d3d175e560ae133f1ed5cd4ec173751a.png" alt="pin logo" class="img1" />
+            <img src="/images/Pinfinity.png" alt="pin logo" class="img1" />
             <a href="#" class="nav-link">Pinterest</a>
         </div>
         <div class="btn-container">
@@ -26,7 +27,7 @@
                 <img class="card-img" src="/images/uploads/<%=post.image %>" alt="Card image cap">
                 <div class="card-body">
                     <h5 class="card-title"><%=post.caption%></h5>
-                    <p class="card-title">@<%=post.user.username%></p>
+                    <p class="card-title username">@<%=post.user.username%></p>
                     <% 
                         const today = new Date(post.createdAt);
                         const yyyy = today.getFullYear();
@@ -44,6 +45,23 @@
         <% }) %>
     </div>
 
-</body>
+    <!-- Modal structure -->
+    <div id="cardModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img id="modalImg" class="modal-img" src="" alt="Card image">
+            <h5 id="modalTitle" class="modal-title"></h5>
+            <p id="modalCaption" class="modal-caption"></p>
+            <p id="modalDate" class="modal-date"></p>
+        </div>
+    </div>
 
+    <footer class="footer">
+        <p>&copy; 2024 Pinfinity. All rights reserved.</p>
+        <p><a href="#">About</a> | <a href="#">Contact</a> | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+
+    <script src="/javascripts/index.js"></script>
+</body>
 </html>
