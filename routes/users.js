@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const plm = require('passport-local-mongoose');//auth code
 
-const path = "mongodb://127.0.0.1:27017/pinterestDb";
+const path = "mongodb://127.0.0.1:27017/Pinfinity";
 mongoose.connect(path);
 
 const userSchema = mongoose.Schema({

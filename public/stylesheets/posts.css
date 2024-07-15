@@ -211,3 +211,21 @@ body {
 .footer a:hover {
     text-decoration: underline;
 }
+
+/* Delete Button */
+.delete-btn {
+    background-color: #ff4757;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-btn:hover {
+    background-color: #d11500; /* Dark red */
+}
+
+
+
