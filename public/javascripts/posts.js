@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
             modal.style.display = "block";
             modalImg.src = imgSrc;
-            modalTitle.innerText = caption;
             modalCaption.innerText = caption;
             modalDate.innerText = date;
             deleteBtn.style.display = "block";
